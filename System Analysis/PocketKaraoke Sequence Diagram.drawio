@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-12T00:24:03.130Z" agent="5.0 (Windows)" etag="Uqrty6M3gnWqHPfDtXec" version="17.4.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-04-12T00:28:07.533Z" agent="5.0 (Windows)" etag="dyYJNjOxey7XFGMkPOyY" version="17.4.2" type="github" pages="4">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="1964" dy="1051" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -1505,7 +1505,7 @@
         <mxCell id="SEvpx9oYAzMZGQEV07da-98" value="calculate score" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="880" y="1022" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="SEvpx9oYAzMZGQEV07da-99" value="Alternative" style="shape=umlFrame;whiteSpace=wrap;html=1;allowArrows=0;connectable=0;strokeColor=#FF8000;" vertex="1" parent="1">
+        <mxCell id="SEvpx9oYAzMZGQEV07da-99" value="Alternative" style="shape=umlFrame;whiteSpace=wrap;html=1;allowArrows=0;connectable=0;strokeColor=#d6b656;fillColor=#fff2cc;gradientColor=#ffd966;" vertex="1" parent="1">
           <mxGeometry x="31" y="510" width="1110" height="420" as="geometry" />
         </mxCell>
         <mxCell id="SEvpx9oYAzMZGQEV07da-100" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
