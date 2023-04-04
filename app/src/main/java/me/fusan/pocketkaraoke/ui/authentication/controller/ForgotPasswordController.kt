@@ -7,6 +7,10 @@ class ForgotPasswordController(forgotPasswordActivity_: ForgotPasswordActivity) 
     var forgotPasswordModel: ForgotPasswordModel = ForgotPasswordModel(this)
     var forgotPasswordActivity: ForgotPasswordActivity = forgotPasswordActivity_
 
+    fun doPasswordReset(email: String) {
+        forgotPasswordModel.doReset(email)
+    }
+
     fun returnSuccessfulMessage() {
         forgotPasswordActivity.returnSuccessfulToast()
     }
@@ -21,9 +25,5 @@ class ForgotPasswordController(forgotPasswordActivity_: ForgotPasswordActivity) 
 
     fun returnEmailNotValidMessage() {
         forgotPasswordActivity.returnEmailNotValidToast()
-    }
-
-    fun doPasswordReset(email: String) {
-        forgotPasswordModel.doReset(email)
     }
 }

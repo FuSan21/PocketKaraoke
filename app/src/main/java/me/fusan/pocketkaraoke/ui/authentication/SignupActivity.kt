@@ -1,9 +1,8 @@
 package me.fusan.pocketkaraoke.ui.authentication
 
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Patterns
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -14,74 +13,63 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import me.fusan.pocketkaraoke.R
+import me.fusan.pocketkaraoke.ui.authentication.controller.SignupController
 
 class SignupActivity : AppCompatActivity() {
-    private var mEmail: EditText? = null
-    private var mPassword: EditText? = null
-    private var mName: EditText? = null
-    private var auth: FirebaseAuth? = null
-    private var database: FirebaseDatabase? = null
-    private var ref: DatabaseReference? = null
-    private var progressBar: ProgressBar? = null
+    private lateinit var signupController: SignupController
+    private lateinit var mEmail: EditText
+    private lateinit var mPassword: EditText
+    private lateinit var mName: EditText
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
+    private lateinit var ref: DatabaseReference
+    private lateinit var progressBar: ProgressBar
+    private lateinit var signupButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        signupController = SignupController(this)
         mEmail = findViewById<EditText>(R.id.email)
         mPassword = findViewById<EditText>(R.id.password)
         mName = findViewById<EditText>(R.id.name)
         auth = FirebaseAuth.getInstance()
         database = Firebase.database
-        ref = database!!.reference
+        ref = database.reference
         progressBar = findViewById(R.id.progressBar)
-    }
-
-    fun createDataBase(name: String?) {
-//        val user = User(name, mEmail!!.text.toString())
-//        val userID = auth!!.currentUser!!.uid
-//        ref?.child("Users")?.child(userID)?.setValue(user)
-//        ref?.child("UserChallenges")?.child(userID)
-    }
-
-    fun doSignup() {
-        progressBar!!.visibility = View.VISIBLE
-        val email: String = mEmail!!.text.toString()
-        val password: String = mPassword!!.text.toString()
-        val name: String = mName!!.text.toString()
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(applicationContext, "Enter email address!", Toast.LENGTH_SHORT).show()
-        } else if (TextUtils.isEmpty(password)) {
-            Toast.makeText(applicationContext, "Enter password!", Toast.LENGTH_SHORT).show()
-        } else if (TextUtils.isEmpty(name)) {
-            Toast.makeText(applicationContext, "Enter Name!", Toast.LENGTH_SHORT).show()
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(applicationContext, "Invalid Email Address!", Toast.LENGTH_SHORT).show()
-        } else if (password.length < 6) {
-            Toast.makeText(
-                applicationContext,
-                "Password too short, enter minimum 6 characters!",
-                Toast.LENGTH_SHORT
-            ).show()
-        } else {
-            auth?.createUserWithEmailAndPassword(email, password)
-                ?.addOnCompleteListener(this) { task ->
-                    progressBar!!.visibility = View.GONE
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Toast.makeText(
-                            this@SignupActivity,
-                            "Sign Up Successful!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        createDataBase(name)
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(
-                            this@SignupActivity,
-                            "Authentication Failed. " + task.exception,
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
+        signupButton = findViewById(R.id.signup_button)
+        signupButton.setOnClickListener{
+            progressBar.visibility = View.VISIBLE
+            signupController.doSignup(mEmail.text.toString(), mPassword.text.toString(), mName.text.toString())
         }
+
+    }
+
+    fun returnEmailEmptyToast() {
+        Toast.makeText(applicationContext, "Enter email address!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun returnPasswordEmptyToast() {
+        Toast.makeText(applicationContext, "Enter password!", Toast.LENGTH_SHORT).show()
+    }
+    fun returnNameEmptyToast() {
+        Toast.makeText(applicationContext, "Enter Name!", Toast.LENGTH_SHORT).show()
+    }
+    fun returnEmailNotValidToast() {
+        Toast.makeText(applicationContext, "Invalid Email Address!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun returnPasswordLessThanSixToast() {
+        Toast.makeText(applicationContext, "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun returnSuccessfulToast() {
+        progressBar.visibility = View.GONE
+        Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun returnUnsuccessfulToast(taskException: String) {
+        progressBar.visibility = View.GONE
+        Toast.makeText(this, "Authentication Failed. $taskException", Toast.LENGTH_SHORT).show()
     }
 }

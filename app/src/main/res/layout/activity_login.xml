@@ -48,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:onClick="doSignin"
             android:text="@string/sign_in"
             android:textColor="#fff" />
 
@@ -58,7 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@android:color/transparent"
-            android:onClick="doForgotPassword"
             android:text="@string/forgot_your_password"
             android:textColor="#4a148c" />
 
@@ -68,7 +66,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@android:color/transparent"
-            android:onClick="gotoSignup"
             android:text="@string/sign_up"
             android:textColor="#4a148c" />
     </LinearLayout>

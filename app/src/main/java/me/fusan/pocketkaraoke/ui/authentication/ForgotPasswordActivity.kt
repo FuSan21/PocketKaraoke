@@ -12,17 +12,17 @@ import me.fusan.pocketkaraoke.ui.authentication.controller.ForgotPasswordControl
 
 class ForgotPasswordActivity : AppCompatActivity() {
     lateinit var forgotPasswordController: ForgotPasswordController
-    private lateinit var reset_button: Button
-    lateinit var mEmail: EditText
-    lateinit var progressBar: ProgressBar
+    private lateinit var resetButton: Button
+    private lateinit var mEmail: EditText
+    private lateinit var progressBar: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
         forgotPasswordController = ForgotPasswordController(this)
         mEmail = findViewById<EditText>(R.id.email)
         progressBar = findViewById(R.id.progressBar)
-        reset_button = findViewById(R.id.reset_button)
-        reset_button.setOnClickListener{
+        resetButton = findViewById(R.id.reset_button)
+        resetButton.setOnClickListener{
             progressBar.visibility = View.VISIBLE
             forgotPasswordController.doPasswordReset(mEmail.text.toString())
         }
