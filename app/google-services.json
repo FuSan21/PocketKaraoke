@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "762895362961",
+    "project_id": "pocketkaraoke-b39db",
+    "storage_bucket": "pocketkaraoke-b39db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762895362961:android:69abf7406596f0c8cf4830",
+        "android_client_info": {
+          "package_name": "fusan.pocketkaraoke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762895362961-gh9uvf3ipheeaidk8koe8i2659shshv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgFHq-JbfAzMTLQO9m8h9eYeMZ6tcyj1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762895362961-gh9uvf3ipheeaidk8koe8i2659shshv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762895362961:android:759cf23330a07654cf4830",
+        "android_client_info": {
+          "package_name": "me.fusan.pocketkaraoke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762895362961-gh9uvf3ipheeaidk8koe8i2659shshv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgFHq-JbfAzMTLQO9m8h9eYeMZ6tcyj1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762895362961-gh9uvf3ipheeaidk8koe8i2659shshv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

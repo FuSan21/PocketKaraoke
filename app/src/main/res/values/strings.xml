@@ -3,4 +3,13 @@
     <string name="title_karaoke">Karaoke</string>
     <string name="title_effects">Effects</string>
     <string name="title_challenges">Challenges</string>
+    <string name="forgot_password_message">We just need your registered email address to send you password reset instructions</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="reset">Reset</string>
+
 </resources>
