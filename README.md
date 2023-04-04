@@ -2,7 +2,7 @@
 
 ## What is this project?
 
-PocketKaraoke is a Kotlin rewrite of rohanbhatia96/Musica (karaoke app for Android). You can sing along popular songs and get scored based on your singing.
+PocketKaraoke is a Kotlin karaoke app for Android. You can sing along popular songs and get scored based on your singing.
 
 ## Features
 
@@ -10,7 +10,7 @@ PocketKaraoke is a Kotlin rewrite of rohanbhatia96/Musica (karaoke app for Andro
 2. You get a score based on your singing. The score is calculated by comparing FFT transformations of the recorded sound and original music.
 3. You get a real time frequency graph of your singing. 
 4. You can add certain effects like reverb, echo, pitch change etc to your recorded songs.
-5. You can challeneg friends to a sing off.
+5. You can challenge friends to a sing off.
 
 ## Technologies Used
 
