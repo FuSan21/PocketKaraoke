@@ -21,26 +21,10 @@ PocketKaraoke is a Kotlin karaoke app for Android. You can sing along popular so
 
 ## App Screenshots
 
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
+![Login](AppScreenshots/1.png | width=350)
+![Login](AppScreenshots/2.png | width=350)
+![Login](AppScreenshots/3.png | width=350)
 \
 \
-![Login](AppScreenshots/4.png)
-![Login](AppScreenshots/5.png)
-![Login](AppScreenshots/3.png)
-\
-\
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
-\
-\
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
-\
-\
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
+![Login](AppScreenshots/4.png | width=350)
+![Login](AppScreenshots/5.png | width=350)
