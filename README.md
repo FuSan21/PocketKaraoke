@@ -2,7 +2,8 @@
 
 ## What is this project?
 
-PocketKaraoke is a Kotlin karaoke app for Android. You can sing along popular songs and get scored based on your singing.
+PocketKaraoke is a Kotlin karaoke app for Android written in MVP architecture.
+You can sing along popular songs and get scored based on your singing.
 
 ## Features
 
