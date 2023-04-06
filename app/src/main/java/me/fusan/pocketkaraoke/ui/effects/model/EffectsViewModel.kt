@@ -1,4 +1,4 @@
-package me.fusan.pocketkaraoke.ui.effects
+package me.fusan.pocketkaraoke.ui.effects.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

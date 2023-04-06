@@ -8,33 +8,30 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import me.fusan.pocketkaraoke.R
-import me.fusan.pocketkaraoke.ui.authentication.controller.ForgotPasswordController
+import me.fusan.pocketkaraoke.ui.authentication.presenter.ForgotPasswordPresenter
 
 class ForgotPasswordActivity : AppCompatActivity() {
-    lateinit var forgotPasswordController: ForgotPasswordController
+    private lateinit var forgotPasswordPresenter: ForgotPasswordPresenter
     private lateinit var resetButton: Button
     private lateinit var mEmail: EditText
     private lateinit var progressBar: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
-        forgotPasswordController = ForgotPasswordController(this)
+        forgotPasswordPresenter = ForgotPasswordPresenter(this)
         mEmail = findViewById<EditText>(R.id.email)
         progressBar = findViewById(R.id.progressBar)
         resetButton = findViewById(R.id.reset_button)
         resetButton.setOnClickListener{
-            progressBar.visibility = View.VISIBLE
-            forgotPasswordController.doPasswordReset(mEmail.text.toString())
+            forgotPasswordPresenter.doPasswordReset(mEmail.text.toString())
         }
     }
 
     fun returnSuccessfulToast() {
-        progressBar.visibility = View.GONE
         Toast.makeText(applicationContext, "Reset Successful!", Toast.LENGTH_SHORT).show()
     }
 
     fun returnUnsuccessfulToast(taskException: String) {
-        progressBar.visibility = View.GONE
         Toast.makeText(applicationContext, "Reset Unsuccessful. $taskException", Toast.LENGTH_LONG).show()
     }
 
@@ -44,6 +41,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     fun returnEmailNotValidToast() {
         Toast.makeText(applicationContext, "Invalid Email Address!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun progressbarStatus(visible: Boolean) {
+        if (visible) progressBar.visibility = View.VISIBLE
+        else progressBar.visibility = View.GONE
     }
 
 }

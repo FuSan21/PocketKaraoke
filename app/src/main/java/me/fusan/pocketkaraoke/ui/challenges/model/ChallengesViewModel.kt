@@ -1,4 +1,4 @@
-package me.fusan.pocketkaraoke.ui.challenges
+package me.fusan.pocketkaraoke.ui.challenges.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

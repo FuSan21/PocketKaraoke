@@ -10,11 +10,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import me.fusan.pocketkaraoke.MainActivity
 import me.fusan.pocketkaraoke.R
-import me.fusan.pocketkaraoke.ui.authentication.controller.LoginController
+import me.fusan.pocketkaraoke.ui.authentication.presenter.LoginPresenter
 
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var loginController: LoginController
+    private lateinit var loginPresenter: LoginPresenter
     private lateinit var mEmail: EditText
     private lateinit var mPassword: EditText
     private lateinit var signinButton: Button
@@ -24,16 +24,15 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        loginController = LoginController(this)
         mEmail = findViewById<EditText>(R.id.email)
         mPassword = findViewById<EditText>(R.id.password)
+        loginPresenter = LoginPresenter(this)
         progressBar = findViewById(R.id.progressBar)
         signinButton = findViewById(R.id.signin_button)
         forgotPasswordButton = findViewById(R.id.forgot_password_button)
         goToSignupButton = findViewById(R.id.goto_signup_button)
         signinButton.setOnClickListener{
-            progressBar.visibility = View.VISIBLE
-            loginController.doSignin(mEmail.text.toString(), mPassword.text.toString())
+            loginPresenter.doSignin(mEmail.text.toString(), mPassword.text.toString())
         }
         forgotPasswordButton.setOnClickListener{
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
@@ -44,9 +43,10 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-
-    override fun onBackPressed() {
-        moveTaskToBack(true)
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        loginPresenter.bypassLoginForExistingUser()
     }
 
     fun gotoMainActivity() {
@@ -70,12 +70,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun returnSuccessfulToast() {
-        progressBar.visibility = View.GONE
         Toast.makeText(applicationContext, "Signed In.", Toast.LENGTH_SHORT).show()
     }
 
     fun returnUnsuccessfulToast(taskException: String) {
-        progressBar.visibility = View.GONE
         Toast.makeText(applicationContext, "Sign In Failed. $taskException", Toast.LENGTH_LONG).show()
+    }
+
+    fun progressbarStatus(visible: Boolean) {
+        if (visible) progressBar.visibility = View.VISIBLE
+        else progressBar.visibility = View.GONE
     }
 }

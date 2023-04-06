@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import me.fusan.pocketkaraoke.databinding.FragmentEffectsBinding
+import me.fusan.pocketkaraoke.ui.effects.model.EffectsViewModel
 
 class EffectsFragment : Fragment() {
 

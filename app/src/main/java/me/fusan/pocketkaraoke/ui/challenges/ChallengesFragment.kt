@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import me.fusan.pocketkaraoke.databinding.FragmentChallengesBinding
+import me.fusan.pocketkaraoke.ui.challenges.model.ChallengesViewModel
 
 class ChallengesFragment : Fragment() {
 
