@@ -21,26 +21,10 @@ PocketKaraoke is a Kotlin karaoke app for Android. You can sing along popular so
 
 ## App Screenshots
 
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
+<img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/1.png" width="320"><img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/2.png" width="320"><img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/3.png" width="320">
 \
 \
-![Login](AppScreenshots/4.png)
-![Login](AppScreenshots/5.png)
-![Login](AppScreenshots/3.png)
+<img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/4.png" width="320"><img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/5.png" width="320"><img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/6.png" width="320">
 \
 \
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
-\
-\
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
-\
-\
-![Login](AppScreenshots/1.png)
-![Login](AppScreenshots/2.png)
-![Login](AppScreenshots/3.png)
+<img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/7.png" width="320"><img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/8.png" width="320"><img src="https://raw.githubusercontent.com/FuSan21/PocketKaraoke/main/AppScreenshots/9.png" width="320">
