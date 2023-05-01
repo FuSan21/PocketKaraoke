@@ -1,4 +1,4 @@
-package fusan.pocketkaraoke
+package me.fusan.pocketkaraoke.ui.karaoke
 
 import android.content.Context
 import android.graphics.Typeface
@@ -10,9 +10,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import me.fusan.pocketkaraoke.R
 
-/**
- * Created by Fusan on 26-Mar-22.
- */
 class CustomList(
     private val context: Context,
     private val songs: Array<String>,
@@ -20,8 +17,8 @@ class CustomList(
     private val imgID: Array<Int>
 ) :
     ArrayAdapter<String?>(context, R.layout.list_single) {
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        var convertView = convertView
+    override fun getView(position: Int, convertView_: View?, parent: ViewGroup): View {
+        var convertView = convertView_
         if (convertView == null) {
             val inflater =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
