@@ -71,8 +71,10 @@ class KaraokeActivityPresenter (karaokeActivity_: KaraokeActivity) {
     }
 
     fun addAmplitude() {
-        val amp = karaokeActivityModel.recorder.maxAmplitude.toFloat()
-        val norm = (amp.toInt() / 15).coerceAtMost(karaokeActivity.karaokeWaveform.measuredHeight).toFloat()
+        var amp = karaokeActivityModel.recorder.maxAmplitude.toFloat()
+        if (amp<2000) amp = 0F
+        else amp -= 2000
+        val norm = (amp.toInt()/10).coerceAtMost(karaokeActivity.karaokeWaveform.measuredHeight).toFloat()
         karaokeActivityModel.amplitudes.add(norm)
 
         karaokeActivityModel.spikes.clear()
