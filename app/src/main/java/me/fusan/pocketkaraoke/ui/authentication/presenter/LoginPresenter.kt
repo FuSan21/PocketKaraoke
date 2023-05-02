@@ -4,6 +4,7 @@ import android.text.TextUtils
 import android.util.Patterns
 import me.fusan.pocketkaraoke.ui.authentication.LoginActivity
 import me.fusan.pocketkaraoke.ui.authentication.model.LoginViewModel
+import me.fusan.pocketkaraoke.ui.authentication.model.User
 
 class LoginPresenter (loginActivity_: LoginActivity) {
     var loginViewModel: LoginViewModel = LoginViewModel(this)
@@ -24,6 +25,7 @@ class LoginPresenter (loginActivity_: LoginActivity) {
                 loginActivity.progressbarStatus(false)
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+                    User(email)
                     loginActivity.returnSuccessfulToast()
                     loginActivity.gotoMainActivity()
                 } else {

@@ -11,7 +11,7 @@ class SignupViewModel (signupPresenter_: SignupPresenter) {
 
     fun createDataBase(name: String, email: String) {
         val userID = auth.currentUser!!.uid
-        val user = User(name, email, userID)
+        val user = User(email)
         //ref?.child("Users")?.child(userID)?.setValue(user)
         //ref?.child("UserChallenges")?.child(userID)
     }

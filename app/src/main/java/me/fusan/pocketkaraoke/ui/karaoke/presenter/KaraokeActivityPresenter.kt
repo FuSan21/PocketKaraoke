@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.graphics.*
 import android.media.MediaRecorder
 import me.fusan.pocketkaraoke.R
+import me.fusan.pocketkaraoke.ui.authentication.model.User
 import me.fusan.pocketkaraoke.ui.karaoke.KaraokeActivity
 import me.fusan.pocketkaraoke.ui.karaoke.model.KaraokeActivityModel
 import java.io.IOException
@@ -134,6 +135,7 @@ class KaraokeActivityPresenter (karaokeActivity_: KaraokeActivity) {
     private fun calculateTotalKaraokeScore() {
         karaokeActivityModel.karaokeScore = karaokeActivityModel.scores.sum()/karaokeActivityModel.songTotalSegments
         val df = DecimalFormat("#.##")
+        User.Companion.LastKaraokeResult(karaokeActivityModel.currentSong, df.format(karaokeActivityModel.karaokeScore))
         karaokeActivity.showKaraokeScore(df.format(karaokeActivityModel.karaokeScore))
     }
 
