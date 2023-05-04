@@ -14,7 +14,7 @@ import me.fusan.pocketkaraoke.ui.authentication.presenter.LoginPresenter
 
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var loginPresenter: LoginPresenter
+    lateinit var loginPresenter: LoginPresenter
     private lateinit var mEmail: EditText
     private lateinit var mPassword: EditText
     private lateinit var signinButton: Button
@@ -32,7 +32,13 @@ class LoginActivity : AppCompatActivity() {
         forgotPasswordButton = findViewById(R.id.forgot_password_button)
         goToSignupButton = findViewById(R.id.goto_signup_button)
         signinButton.setOnClickListener{
-            loginPresenter.doSignin(mEmail.text.toString(), mPassword.text.toString())
+            when(loginPresenter.doSignin(mEmail.text.toString(), mPassword.text.toString())) {
+                1 -> progressbarStatus(true)
+                -1 -> Toast.makeText(applicationContext, "Enter email!", Toast.LENGTH_SHORT).show()
+                -2 -> Toast.makeText(applicationContext, "Enter password!", Toast.LENGTH_SHORT).show()
+                -3 -> Toast.makeText(applicationContext, "Incorrect password!", Toast.LENGTH_SHORT).show()
+                -4 -> Toast.makeText(applicationContext, "Invalid Email Address!", Toast.LENGTH_SHORT).show()
+            }
         }
         forgotPasswordButton.setOnClickListener{
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
@@ -51,22 +57,6 @@ class LoginActivity : AppCompatActivity() {
 
     fun gotoMainActivity() {
         startActivity(Intent(this, MainActivity::class.java))
-    }
-
-    fun returnEmailEmptyToast() {
-        Toast.makeText(applicationContext, "Enter email!", Toast.LENGTH_SHORT).show()
-    }
-
-    fun returnPasswordEmptyToast() {
-        Toast.makeText(applicationContext, "Enter password!", Toast.LENGTH_SHORT).show()
-    }
-
-    fun returnEmailNotValidToast() {
-        Toast.makeText(applicationContext, "Invalid Email Address!", Toast.LENGTH_SHORT).show()
-    }
-
-    fun returnPasswordLessThanSixToast() {
-        Toast.makeText(applicationContext, "Incorrect password!", Toast.LENGTH_SHORT).show()
     }
 
     fun returnSuccessfulToast() {

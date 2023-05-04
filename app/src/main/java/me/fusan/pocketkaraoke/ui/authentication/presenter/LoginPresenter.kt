@@ -10,17 +10,17 @@ class LoginPresenter (loginActivity_: LoginActivity) {
     var loginViewModel: LoginViewModel = LoginViewModel(this)
     private var loginActivity: LoginActivity = loginActivity_
 
-    fun doSignin(email: String, password: String) {
+    fun doSignin(email: String, password: String):Int {
         if (TextUtils.isEmpty(email)) {
-            loginActivity.returnEmailEmptyToast()
+            return -1
         } else if (TextUtils.isEmpty(password)) {
-            loginActivity.returnPasswordEmptyToast()
+            return -2
         } else if (password.length < 6) {
-            loginActivity.returnPasswordLessThanSixToast()
+            return -3
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            loginActivity.returnEmailNotValidToast()
-        } else {        //FireBase Login
-            loginActivity.progressbarStatus(true)
+            return -4
+        } else {
+            //FireBase Login
             loginViewModel.auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(loginActivity) { task ->
                 loginActivity.progressbarStatus(false)
                 if (task.isSuccessful) {
@@ -33,6 +33,7 @@ class LoginPresenter (loginActivity_: LoginActivity) {
                     loginActivity.returnUnsuccessfulToast(task.exception.toString())
                 }
             }
+            return 1
         }
     }
 
